@@ -118,7 +118,7 @@ class FilesApiController extends BaseApiController
 
 			// Save the file to disk in chunks of 1 MB
 			$requestBody = $request->getBody();
-			while ($data = $requestBody->read(1048576))
+			while ($data = $requestBody->read(2097152))
 			{
 				if (fwrite($fileHandle, $data) === false)
 				{
